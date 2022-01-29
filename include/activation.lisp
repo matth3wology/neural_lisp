@@ -1,0 +1,13 @@
+(defun sigmoid (x) (/ 1 (+ 1 (exp (- x)))))
+
+(defun activate-sigmoid (matrix)
+    (let ((n (nth 0 (array-dimensions matrix)))
+          (m (nth 1 (array-dimensions matrix))))
+        (let ((tmp-array (make-array (list n m))))
+        (dotimes (i n)
+            (dotimes (j m)
+                (setf (aref tmp-array i j) (sigmoid (aref matrix i j)))
+            )
+        )tmp-array)
+    )    
+)
