@@ -46,3 +46,21 @@
             (format t "Matrix dimensions do not match.~%")
         ))
 )
+
+(defun subtract (mat1 mat2)
+    " Takes two matrices and performs a dot product"
+   (let ((n (nth 0 (array-dimensions mat1)))
+        (m (nth 1 (array-dimensions mat1)))
+        (i (nth 0 (array-dimensions mat2)))
+        (j (nth 1 (array-dimensions mat2))))
+        (if (and (= n i) (= m j))
+            (let ((tmp-array (make-array (list n m) :initial-element 1.0)))
+                (dotimes (row-i i)
+                    (dotimes (row-j j)
+                        (setf (aref tmp-array row-i row-j) (- (aref mat1 row-i row-j) (aref mat2 row-i row-j)))
+                    ))
+                tmp-array
+            )
+            (format t "Matrix dimensions do not match.~%")
+        ))
+)
