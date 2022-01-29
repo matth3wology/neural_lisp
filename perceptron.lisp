@@ -26,4 +26,6 @@
 
 ; Jump back through loop
 
+; Test accuracy on training set
+
 (print h3)
