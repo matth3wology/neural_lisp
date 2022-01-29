@@ -10,7 +10,7 @@
 )
 
 (defun dot-product (mat1 mat2)
-    " Takes two matrices and performs a dot product"
+    " Takes two matrices and performs a cross multiply"
    (let ((n (nth 0 (array-dimensions mat1)))
         (m (nth 1 (array-dimensions mat1)))
         (i (nth 0 (array-dimensions mat2)))
